@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>Formulario de Ingreso</title>
+</head>
+<body>
+	<div style="margin: 100px 0 0 100px">
+		<h2>Ingreso de productos </h2>
+	</div>
+	<div style="margin-left: 100px">
+		<form method="post" th:action="@{/formulario}" th:object="${product}">
+			<table>
+				<tr style="margin: 16px 0 16px 0">
+					<td>Codigo de Producto Universal:</td>
+					<td><input th:field="*{code}"  type="text" placeholder="Digite el c&oacute;digo del producto"
+						style="padding: 6px; width: 300px" id="code" />
+						<span th:errors="*{code}" style="color: #FF0000"></span></td>
+				</tr>
+				<tr>
+					<td>Nombre Producto:</td>
+					<td><input th:field="*{name}" type="text" placeholder="Digite el nombre del producto"
+						style="padding: 6px; width: 300px" id="name" />
+						<span th:errors="*{name}" style="color: #FF0000"></span></td>
+				</tr>
+				<tr>
+					<td>Marca:</td>
+					<td><input th:field="*{brand}" type="text"
+						placeholder="Digite la marca del producto"
+						style="padding: 6px; width: 300px" id="brand" />
+						<span th:errors="*{brand}" style="color: #FF0000"></span></td>
+				</tr>
+				<tr>
+					<td>Descripci&oacute;n:</td>
+					<td><input th:field="*{desc}" type="text"
+						placeholder="Digite la descripci&oacute;n del producto"
+						style="padding: 6px; width: 300px;" id="desc" />
+						<span th:errors="*{desc}" style="color: #FF0000"></span></td>
+				</tr>
+				<tr>
+					<td>Existencias:</td>
+					<td><input th:field="*{stock}" type="text"
+						placeholder="Digite las existencias del producto"
+						style="padding: 6px; width: 300px" id="stock" />
+						<span th:errors="*{stock}" style="color: #FF0000"></span></td>
+				</tr>
+				<tr>
+					<td>Fecha de ingreso :</td>
+					<td><input th:field="*{datein}" type="text"
+						placeholder="Digite la fecha de ingreso del producto"
+						style="padding: 6px; width: 300px" id="datein" />
+						<span th:errors="*{datein}" style="color: #FF0000"></span></td>
+				</tr>
+
+				<tr>
+					<td><input style="margin: auto" type="submit"
+						value="Guardar Producto" /></td>
+				</tr>
+			</table>
+		</form>
+	</div>
+</body>
+</html>
